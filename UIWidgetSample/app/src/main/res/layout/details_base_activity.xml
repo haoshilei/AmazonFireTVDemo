@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/detail_screen_top_padding">
+
+    <!-- The left options fragment -->
+    <fragment 
+        android:name="com.sample.amazon.asbuilibrary.details.DetailsMenuListFragment"
+        android:id="@+id/list_fragment"
+        android:layout_width="@dimen/detail_menu_options_width"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/detail_screen_side_padding" />
+
+    <!-- This is the viewgroup that gets replaced by the right fragment -->
+    <FrameLayout
+        android:id="@+id/details_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

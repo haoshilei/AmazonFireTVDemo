@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridLayout
+        android:layout_width="480dp"
+        android:layout_height="wrap_content"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignBounds"
+        android:columnOrderPreserved="false"
+        android:columnCount="4"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true" >
+
+        <!-- Title -->
+
+        <TextView
+            android:text="@string/kbsample_title"
+            android:textSize="32sp"
+            android:layout_columnSpan="4"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Header -->
+
+        <TextView
+            android:text="@string/kbsample_description"
+            android:textSize="16sp"
+            android:layout_columnSpan="4"
+            android:layout_gravity="left" />
+
+        <!-- Field 1 -->
+
+        <TextView
+            android:text="@string/kbsample_field_name_label"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="right" />
+
+        <TextView 
+            android:id="@+id/name_field_label"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:ems="15" />
+
+        <!-- Field 2 -->
+
+        <TextView
+            android:text="@string/kbsample_field_email_label"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:id="@+id/email_field_label"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:ems="15" />
+
+        <!-- Field 3 -->
+
+        <TextView
+            android:text="@string/kbsample_field_phone_label"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:id="@+id/phone_field_label"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:ems="15" />
+
+        <!-- Field 4 -->
+
+        <TextView
+            android:text="@string/kbsample_field_password_label"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:id="@+id/password_field_label"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:ems="15" />
+
+        <!-- Field 5 -->
+
+        <TextView
+            android:text="@string/kbsample_field_pin_label"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:id="@+id/pin_field_label"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:ems="15" />
+
+        <!-- Footer Space -->
+
+        <Space
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill" />
+
+        <!-- Action bar -->
+
+        <Button
+            android:id="@+id/edit_button"
+            android:text="@string/kbsample_button_label"
+            android:layout_row="8"
+            android:layout_column="1"
+            android:layout_columnSpan="2" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/input_fields_group"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText 
+            android:id="@+id/name_field_input"
+            android:inputType="text"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+
+        <EditText
+            android:id="@+id/email_field_input"
+            android:inputType="text|textEmailAddress"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+
+        <EditText
+            android:id="@+id/phone_field_input"
+            android:inputType="number|phone"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+        
+        <EditText
+            android:id="@+id/password_field_input"
+            android:inputType="text|textPassword"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+        
+        <EditText
+            android:id="@+id/pin_field_input"
+            android:inputType="number|numberPassword"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+	</LinearLayout>    
+</RelativeLayout>
+

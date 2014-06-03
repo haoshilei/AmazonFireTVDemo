@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Background Gradient Colors -->
+    <color name="bg_grad_start">#4D4D4D</color>
+    <color name="bg_grad_end">#000000</color>
+
+    <!-- Carousel Background Colors -->
+    <color name="carousel_bg_grad_start">#85292929</color>
+    <color name="carousel_bg_grad_end">#85000000</color>
+
+    <color name="tombstone_text_unfocused">#FFFFFF</color>
+    <color name="tombstone_text_focused">#352a08</color>
+
+    <!-- Cover Banner Colors -->
+    <color name="cover_banner_title">#FFFFFF</color>
+    <color name="cover_banner_text">#FFFFFF</color>
+    <color name="banner_title_shadow">#725F3C00</color>
+    
+    <!-- Ownership Banner color -->
+    <color name="ownership_banner_text">#FFFFFF</color>
+    
+    <!-- Settings -->
+    <color name="title_color">@android:color/holo_blue_light</color>
+
+    <!-- Settings -->
+    <color name="preference_text_selected">#F7941D</color>
+    <color name="preference_text_unselected">#FFFFFF</color>
+
+    <!-- Uber Home Colors -->
+    <color name="progress_bar_watched">#AAAAAA</color>
+    <color name="progress_bar_total">#FF626262</color>
+    <color name="divider_color">#151515</color>
+    <color name="orange_highlight">#F7941D</color>
+    <color name="listview_title">#FF626262</color>
+    <color name="listview_background">#232323</color>
+    <color name="right_pane">#232323</color>
+    <color name="dialog_text">#DADADA</color>
+    <color name="preference_text_selected_top">#F8BB49</color>
+    <color name="preference_text_selected_bottom">#F7941D</color>
+    <color name="preference_text_unselected_top">#DADADA</color>
+    <color name="preference_text_unselected_bottom">#DADADA</color>
+
+
+</resources>

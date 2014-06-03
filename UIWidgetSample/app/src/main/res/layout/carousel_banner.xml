@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/banner_text_box"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/carousel_cover_banner_height"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:visibility="gone" >
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/banner_title"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        app:font="RobotoBold"
+        style="@style/coverBanner.Title" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/banner_text"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        app:font="RobotoBlack"
+        style="@style/coverBanner.Text" />
+</LinearLayout>

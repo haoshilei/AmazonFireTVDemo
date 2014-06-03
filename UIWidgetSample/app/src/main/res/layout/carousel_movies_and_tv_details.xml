@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/details"
+    android:layout_width="225.0dp"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/carousel_top_margin"
+    android:visibility="gone">
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/title"
+        app:font="RobotoBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="bottom|left"
+        android:lines="2"
+        android:paddingTop="7.5dp"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="11.25sp"
+        android:textStyle="bold" />
+
+    <!-- The Rating, Year, Definition, etc... -->
+
+    <ImageView
+        android:id="@+id/definition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="3.75dp"
+        android:gravity="left"
+        android:paddingLeft="3.75dp"
+        android:paddingRight="3.75dp"
+        android:contentDescription="@string/video_quality_description" />
+
+    <ImageView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="3.75dp"
+        android:layout_toRightOf="@id/definition"
+        android:gravity="left"
+        android:paddingLeft="3.75dp"
+        android:paddingRight="3.75dp"
+        android:contentDescription="@string/video_rating_description" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/year"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="3.75dp"
+        android:layout_toRightOf="@id/rating"
+        android:gravity="left"
+        android:paddingRight="3.75dp"
+        android:singleLine="true"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="9.0sp" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/duration"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/year"
+        android:layout_margin="3.75dp"
+        android:paddingRight="3.75dp"
+        android:gravity="left"
+        android:singleLine="true"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="9.0sp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22.5dp"
+        android:layout_marginTop="-3.0dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/metacritic" />
+
+        <com.sample.amazon.asbuilibrary.view.FontableTextView
+            android:id="@+id/metacritic_rating"
+            app:font="RobotoBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="12.0dp"
+            android:singleLine="true"
+            android:textSize="10.5sp"
+            android:textColor="#222222" />
+    </FrameLayout>
+
+    <RatingBar
+        android:id="@+id/rating_stars"
+        style="@style/Widget.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/star_rating_height"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/duration"
+        android:numStars="5"
+        android:stepSize="0.5" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/num_reviews"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/rating_stars"
+        android:layout_marginLeft="3.0dp"
+        android:layout_marginTop="-2.25dp"
+        android:text="@string/detail_num_reviews"
+        android:singleLine="true"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="10.5sp" />
+
+    <!-- The Cast -->
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/starring"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/definition"
+        android:gravity="bottom|left"
+        android:paddingRight="3.75dp"
+        android:paddingTop="3.75dp"
+        android:singleLine="true"
+        android:text="@string/starring"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="7.5sp"
+        android:textStyle="bold" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/cast"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/definition"
+        android:layout_toRightOf="@id/starring"
+        android:gravity="bottom|left"
+        android:paddingTop="3.75dp"
+        android:singleLine="true"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="7.5sp" />
+
+    <!-- The Director -->
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/director_title"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/starring"
+        android:gravity="bottom|left"
+        android:paddingRight="3.75dp"
+        android:singleLine="true"
+        android:text="@string/director"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="7.5sp"
+        android:textStyle="bold" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        android:id="@+id/director"
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/starring"
+        android:layout_toRightOf="@id/director_title"
+        android:gravity="bottom|left"
+        android:singleLine="true"
+        android:textColor="@color/expanded_details_title"
+        android:textSize="7.5sp" />
+
+    <LinearLayout
+        android:id="@+id/linear_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/director_title"
+        android:orientation="vertical">
+
+        <com.sample.amazon.asbuilibrary.view.FontableButton
+            android:id="@+id/add_to_watch_btn"
+            app:font="RobotoBlack"
+            android:layout_width="112.5dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingTop="3.75sp"
+            android:text="@string/add_to_watchlist"
+            android:textSize="7.5sp"
+            android:clickable="true"
+            android:enabled="true" />
+
+        <com.sample.amazon.asbuilibrary.view.FontableButton
+            android:id="@+id/more_info_btn"
+            app:font="RobotoBlack"
+            android:layout_width="112.5dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="3.75sp"
+            android:text="@string/more_info"
+            android:textColor="@android:color/white"
+            android:textSize="7.5sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

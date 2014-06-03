@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 55.5dp tall and centered at 75.75dp below top means a top margin of 48.0dp -->
+<com.sample.amazon.asbuilibrary.util.BreadCrumbRibbon
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="55.5dp"
+    android:id="@+id/title_ribbon_layout"
+    android:layout_marginTop="48.0dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:visibility="invisible">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/icon_and_category_name">
+
+        <!--The images are 81px wide, and should be centered at 96px from left
+            Should be 130px wide. Added 7px to accommodate drop shadow.
+            Note: All pixels are converted to dp reducing them to 3/4 (multiplying
+            them by 0.75) -->
+        <ImageView
+            android:id="@+id/ribbon_icon_view"
+            android:layout_width="102.75dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="46.125dp"
+            android:gravity="center"
+            android:contentDescription="@string/content_description_category_icon"
+            android:scaleType="center"
+            android:importantForAccessibility="no"
+            android:background="@drawable/meatcrumb_ribbon_segment_01" />
+
+        <!-- The background has a 7px drop shadow, and we are supposed to be 2px away
+         Right margin is set to show the right border 28px away, accommodating the drop shadow -->
+        <com.sample.amazon.asbuilibrary.view.FontableTextView
+            android:id="@+id/ribbon_category_name_view"
+            app:font="RobotoBold"
+            android:textAllCaps="true"
+            android:layout_marginLeft="-4.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15.0sp"
+            android:paddingLeft="19.5dp"
+            android:paddingRight="26.25dp"
+            android:background="@drawable/meatcrumb_ribbon_segment_01" />
+
+        <LinearLayout
+            android:id="@+id/ribbon_item_number_view_ll"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/meatcrumb_ribbon_segment_01"
+            android:layout_marginLeft="@dimen/breadcrumb_number_portion_left_margin">
+
+            <com.sample.amazon.asbuilibrary.view.FontableTextView
+                android:id="@+id/ribbon_item_number_view_numerator"
+                app:font="RobotoBlack"
+                android:textSize="@dimen/breadcrumb_number_portion_text_size"
+                android:textColor="#ffffff"
+                android:layout_width="@dimen/breadcrumb_number_portion_left_textview_width"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|right" />
+            <com.sample.amazon.asbuilibrary.view.FontableTextView
+                android:id="@+id/ribbon_item_number_view_seperator"
+                app:font="RobotoLight"
+                android:textSize="@dimen/breadcrumb_number_portion_text_size"
+                android:textColor="#717171"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/pipe"
+                android:layout_width="@dimen/breadcrumb_number_portion_center_textview_width" />
+            <com.sample.amazon.asbuilibrary.view.FontableTextView
+                android:id="@+id/ribbon_item_number_view_denominator"
+                app:font="RobotoLight"
+                android:textSize="@dimen/breadcrumb_number_portion_text_size"
+                android:textColor="#717171"
+                android:layout_width="@dimen/breadcrumb_number_portion_right_textview_width"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- TODO: fix this to match spec -->
+
+</com.sample.amazon.asbuilibrary.util.BreadCrumbRibbon>

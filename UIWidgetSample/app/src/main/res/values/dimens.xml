@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:app="http://schemas.android.com/apk/res/com.amazon.asb.library"
+    >
+
+    <!-- Details page -->
+    <dimen name="detail_menu_options_width">195.0dp</dimen>
+    <dimen name="detail_menu_options_right_padding">15.0dp</dimen>
+    <dimen name="detail_screen_top_padding">22.5dp</dimen>
+    <dimen name="detail_menu_top_margin">15.0dp</dimen>
+    <dimen name="detail_screen_side_padding">52.5dp</dimen>
+    
+    <dimen name="breadcrumb_number_portion_left_textview_width">34.5dp</dimen>
+    <dimen name="breadcrumb_number_portion_center_textview_width">12.0dp</dimen>
+    <dimen name="breadcrumb_number_portion_right_textview_width">39.0dp</dimen>
+    <dimen name="breadcrumb_number_portion_text_size">15.0sp</dimen>
+    <dimen name="breadcrumb_number_portion_left_margin">-3.0dp</dimen>
+
+    <!-- ****************************************************************
+    ***************************1D LIST VALUES, NEEDS PUTTING IN ORDER -->
+
+    <!-- This determines the width of the title information box on the details page -->
+    <!-- Try to make the selected row centralized -->
+    <dimen name="movies_tv_fragment_selected_list_top_margin">150.75dp</dimen>
+    <!-- Hero tile dimensions -->
+    <dimen name="hero_small_width">351dp</dimen>
+    <dimen name="hero_small_height">202.5dp</dimen>
+    <dimen name="hero_large_width">372.75dp</dimen>
+    <dimen name="hero_large_height">289.5dp</dimen>
+    <dimen name="hero_image_max_width">412.5dp</dimen>
+    <dimen name="hero_image_max_height">412.5dp</dimen>
+    <dimen name="hero_offset_x">0.0dp</dimen>
+    <dimen name="hero_offset_y">-52.5dp</dimen>
+    <!-- 1D list state transition values -->
+    <dimen name="zoom_list_y_offset">68.25dp</dimen>
+    <dimen name="zoom_list_y_offset_tombstone">15dp</dimen>
+    <dimen name="zoom_1d_carousel_selection_offset">99.0dp</dimen>
+    <!-- tombstone -->
+    <dimen name="tombstone_width">107.25dp</dimen>
+    <dimen name="tombstone_height">154.5dp</dimen>
+    <dimen name="tombstone_margin_top_selected">15.0dp</dimen>
+    <dimen name="tombstone_margin_top">11.25dp</dimen>
+    <dimen name="tombstone_margin_left_unselected">75.0dp</dimen>
+    <!-- Carousel position on the screen -->
+    <dimen name="carousel_margin_top_selected">69.0dp</dimen>
+    <dimen name="carousel_margin_top_unselected">131.25dp</dimen>
+    <dimen name="item_carousel_left_position">95dp</dimen>
+    <!-- Standard UX dimensions used -->
+    <!-- app:anno annotations are used to line up dimens with the
+         ui specs and are the quoted dimensions in pixels
+         The formula for converting from px=>dp is:
+
+         160*px/dpi where dpi for a 720p display is 213
+         -->
+    <!-- leading dimensions used to vertically create space between text
+    		Note these dimensions are 4dp less than quoted to account
+    		for ux measuring from font baseline and android measuring
+    		from bottom descent of a font.
+    -->
+    <dimen name="ux_leading_Small" app:anno="10px">4.0dp</dimen>
+    <dimen name="ux_leading_Medium" app:anno="14px">7.0dp</dimen>
+    <dimen name="ux_leading_Large" app:anno="20px">11.0dp</dimen>
+    <dimen name="ux_leading_XLarge" app:anno="25px">15.0dp</dimen>
+
+    <!-- Gutter dimensions used to place space between items horizontally  -->
+    <dimen name="ux_gutter_hairline" app:anno="6px">5.0dp</dimen>
+    <dimen name="ux_gutter_narrow" app:anno="10px">8.0dp</dimen>
+    <dimen name="ux_gutter_1en" app:anno="13px">10.0dp</dimen>
+    <dimen name="ux_gutter_wide" app:anno="20px">15.0dp</dimen>
+    <!-- Selected row needs to have 270px (which is 202.5dp) of height and
+         each row shuold be 40px (which is 30.0dp) from each other, this
+         gives us the 310px (which is 232.5dp) of size here.  But that will
+         clip the Settings view, which expects a selected item to be 240dp -->
+    <dimen name="carousel_cover_target_height">240dp</dimen>
+    <dimen name="carousel_cover_unselected_height">177.0dp</dimen>
+    <!-- TV-Safe Padding is used to keep critical elements on-screen for television displays -->
+    <!-- that overscan the image, which trims about 10% of the image around the borders -->
+    <dimen name="tv_safe_padding">22.5dp</dimen>
+    <!-- Width of menu with icon and text showing (including shadows on the right) -->
+    <dimen name="left_nav_expanded_width">204.75dip</dimen>
+
+    <!-- How far from the top will the carousel be pushed down -->
+    <dimen name="carousel_top_margin">22.5dp</dimen>
+
+    <!-- The vertical padding from the top that the viewer rating appears -->
+    <dimen name="rating_padding">2.25dp</dimen>
+
+    <!-- This is the height of one of the stars that appears in the 5-star rating -->
+    <dimen name="star_rating_height">16.6dp</dimen>
+
+    <!-- The vertical padding that the rating count appears -->
+    <dimen name="rating_count_padding">1.dp</dimen>
+
+    <!-- The vertical padding from the top the play button that appears in the mini details text -->
+    <dimen name="play_button_padding">2.0dp</dimen>
+
+    <!-- The cover banner size for a horizontal list -->
+    <dimen name="carousel_cover_banner_height">57dp</dimen>   <!-- 60px banner + 7px ribbon top + 9px drop shadow -->
+
+    <!-- Item View dimensions -->
+    <dimen name="item_view_poster_preview_height">168dp</dimen>
+
+    <!-- (END)***********************************************************
+    ***************************1D LIST VALUES, NEEDS PUTTING IN ORDER -->
+
+    <!-- ownership TextSizes -->
+    <dimen name="ownership_text_size_large">14.5sp</dimen>
+    <dimen name="ownership_text_size_med">12.0sp</dimen>
+    <dimen name="ownership_text_size_small">7.0sp</dimen>
+    <!-- ****************************************************************
+    *************************** SETTINGS VALUES TODO kimbers: cleanup -->
+
+    <!-- Preference widget area width (to the left of the text) -->
+    <dimen name="preference_widget_width">48dp</dimen>
+    <!-- Preference fragment padding, bottom -->
+    <dimen name="preference_fragment_padding_bottom">0dp</dimen>
+    <!-- Preference fragment padding, sides -->
+    <dimen name="preference_fragment_padding_side">16dp</dimen>
+    <!-- Weight of the left pane in a multi-pane preference layout. -->
+    <integer name="preferences_left_pane_weight">4</integer>
+    <!-- Weight of the right pane in a multi-pane preference layout. So the split is 40:60 -->
+    <integer name="preferences_right_pane_weight">6</integer>
+    <!-- Padding to the left of the preference panel breadcrumb -->
+    <dimen name="preference_breadcrumb_paddingLeft">0dp</dimen>
+    <!-- Padding to the right of the preference panel breadcrumb -->
+    <dimen name="preference_breadcrumb_paddingRight">0dp</dimen>
+    <!-- Preference activity, vertical padding for the header list -->
+    <dimen name="preference_screen_header_vertical_padding">0dp</dimen>
+
+    <dimen name="preference_screen_header_padding_side">16dip</dimen>
+    <integer name="preference_screen_header_scrollbarStyle">0x02000000</integer> <!-- outsideOverlay -->
+
+    <integer name="preference_fragment_scrollbarStyle">0x02000000</integer> <!-- outsideOverlay -->
+
+    <dimen name="preference_item_padding_side">8dip</dimen>
+    <dimen name="preference_item_padding_inner">8dip</dimen>
+    <dimen name="preference_child_padding_side">16dip</dimen>
+
+    <dimen name="preference_scroll_indicator_distance">10dp</dimen>
+
+    <dimen name="settings_item_width">160dp</dimen>
+    <dimen name="settings_item_height">240dp</dimen>
+    <dimen name="settings_item_card_width">319dp</dimen>
+    <dimen name="settings_double_pane_width">479dp</dimen> <!-- settings_item_width + settings_item_card_width -->
+    <dimen name="settings_half_pane_width">239.5dp</dimen> <!-- settings_double_pane_width / 2 -->
+    <dimen name="settings_title_size">25sp</dimen>
+
+    <!-- (END)***********************************************************
+    ***************************SETTINGS VALUES, NEEDS PUTTING IN ORDER -->
+    <dimen name="preference_title_padding_top">2dip</dimen>
+    <dimen name="preference_title_padding_left">5dip</dimen>
+    <dimen name="preference_title_padding_bottom">2dip</dimen>
+    <dimen name="preference_title_padding_right">5dip</dimen>
+    
+        <!-- Details page -->
+    <dimen name="detail_cover_width">230dp</dimen>
+    <dimen name="detail_cover_height">330dp</dimen>
+    
+    <!-- Main menu options -->
+    <dimen name="menu_item_width">160dp</dimen>
+    <dimen name="menu_item_height">206dp</dimen>
+    
+    <!-- The cover size  -->
+    <dimen name="carousel_cover_max_width">375.0dp</dimen>
+    <dimen name="carousel_cover_max_height">232.5dp</dimen>
+    <item name="carousel_unselected_item_scale" format="float" type="string">0.87096</item>
+</resources>

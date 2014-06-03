@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="zoom_list_y_offset_hero">91</integer>
+    <integer name="zoom_list_y_offset_tombstone">0</integer>
+    <integer name="selected_carousel_item_offset_adjustment_hero">65</integer>
+    <integer name="selected_carousel_item_offset_adjustment_tombstone">10</integer>
+    <integer name="category_list_transition_duration_ms">300</integer>
+</resources>

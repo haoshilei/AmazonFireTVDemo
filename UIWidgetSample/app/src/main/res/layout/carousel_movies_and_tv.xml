@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:translationX="@dimen/left_nav_expanded_width"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- Not supported for now in the ui library
+    <RelativeLayout
+        android:id="@+id/hero_box"
+        android:visibility="gone"
+        android:layout_width="@dimen/hero_large_width"
+        android:layout_height="@dimen/hero_large_height" >
+
+        <include layout="@layout/hero_tile" />
+    </RelativeLayout>
+    -->
+
+    <RelativeLayout
+        android:id="@+id/tombstone"
+        android:layout_width="@dimen/tombstone_width"
+        android:layout_height="@dimen/tombstone_height"
+        android:layout_alignParentTop="true"
+        android:translationY="@dimen/tombstone_margin_top"
+        android:background="@drawable/tombstone_bg"
+        android:visibility="gone" >
+
+        <com.sample.amazon.asbuilibrary.view.FontableTextView
+            android:id="@+id/tombstone_text"
+            style="@style/tombstoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:font="RobotoBold"
+            android:includeFontPadding="false"
+            android:paddingLeft="6.0dp"
+            android:paddingRight="6.0dp"
+            android:paddingTop="11.25dp" />
+
+    </RelativeLayout>
+
+    <com.sample.amazon.asbuilibrary.list.ItemCarouselView
+        android:id="@+id/cover_list"
+        style="@style/Widget.ItemCarouselView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/carousel_cover_unselected_height"
+        app:selection_offset="@dimen/zoom_1d_carousel_selection_offset" />
+
+    <include layout="@layout/carousel_movies_and_tv_details" />
+
+</RelativeLayout>

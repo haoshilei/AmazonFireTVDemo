@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include layout="@layout/bread_crumb_ribbon_layout" />
+
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/screen_spinner" />
+
+        <FrameLayout
+            android:id="@+id/cover_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/carousel_cover_target_height"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="142.5dp">
+
+            <com.sample.amazon.asbuilibrary.list.ItemCarouselView
+                android:id="@+id/cover_list"
+                style="@style/Widget.ItemCarouselView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/carousel_cover_target_height" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/mini_details_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cover_list_container"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/failed_loading_data" />
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- When an entire screen fails, along with the "auto-retry", show this layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/failure_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <com.sample.amazon.asbuilibrary.view.FontableTextView
+        app:font="RobotoBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="19.5sp"
+        android:text="@string/failed_loading" />
+
+    <com.sample.amazon.asbuilibrary.view.FontableButton
+        app:font="RobotoBlack"
+        android:id="@+id/retry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retry"/>
+
+</LinearLayout>

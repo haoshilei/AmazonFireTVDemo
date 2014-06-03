@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingRight="@dimen/detail_menu_options_right_padding" >
+
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:gravity="top"
+        android:contentDescription="@string/cover_content_description"
+        android:scaleType="fitCenter" />
+
+    <com.sample.amazon.asbuilibrary.details.DetailsMenuOptionListView
+            android:id="@id/android:list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cover"
+            android:layout_marginTop="@dimen/detail_menu_top_margin"
+            android:dividerHeight="0.75dp"
+            android:listSelector="@drawable/details_list_selector"
+            android:nextFocusUp="@id/android:list"
+            android:nextFocusDown="@id/android:list"/>
+
+</RelativeLayout>

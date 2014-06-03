@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Animation duration for the Icon flying out to the BreadCrumb -->
+    <integer name="bread_crumb_icon_flyout_duration_ms">300</integer>
+</resources>

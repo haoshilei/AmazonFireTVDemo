@@ -1,0 +1,98 @@
+<resources>
+    <!-- For accessability -->
+    <string name="cover_content_description">Title Cover</string>
+    <string name="content_description_category_icon">Category Icon</string>
+    <string name="pipe">|</string>
+    <string name="title_ribbon_num_titles_format_string">"%1$3d | %2$3d"</string>
+
+    <!-- carousel list refactoring, needs organizing -->
+    <string name="play_button_content_description">Play Button</string>
+    <string name="press_to">Press</string>
+    <string name="failed_loading">Unable to contact our servers. Please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="video_quality_description">Quality of the video</string>
+    <string name="video_rating_description">Rating for the video</string>
+    <string name="detail_num_reviews">(%s)</string>
+    <string name="starring">Starring</string>
+    <string name="director">Directed by</string>
+    <string name="add_to_watchlist">Add to Watchlist</string>
+    <string name="more_info">More Info</string>
+    <string name="poster_description">poster</string>
+
+    <!-- Ownership text -->
+    <string name="ownership_text_movies_own">YOU OWN THIS TITLE</string>
+    <string name="ownership_text_movies_rent">YOU RENTED THIS TITLE</string>
+    <string name="ownership_text_tv_own_season">YOU OWN THIS SEASON</string>
+    <string name="content_description_progress_bar">progress bar</string>
+
+    
+    <string name="app_name">Sample Application</string>
+
+    <!-- Sample cathegories -->
+    <string name="category_carousel_samples">CAROUSEL SAMPLES</string>
+    <string name="category_detail_samples">DETAIL SAMPLE</string>
+    <string name="category_keyboard_samples">KEYBOARD SAMPLE</string>
+    <string name="category_stacks_samples">STACKS SAMPLE</string>
+
+    <!-- Details Page -->
+    <string name="overview_tab">Overview</string>
+    <string name="overview_content">Overview Fragment!</string>
+    <string name="extra_tab">Extra</string>
+    <string name="extra_content">Extra Fragment!</string>
+
+    <!-- Main menu strings -->
+    <string name="menu_carousel_sample">Carousel Example</string>
+    <string name="menu_paging_sample">Paging Carousel Example</string>
+
+    <string name="menu_details_sample">Details Page Example</string>
+
+    <string name="menu_keyboard_input_sample">Keyboard for Input Fields Example</string>
+    <string name="menu_keyboard_webview_sample">Keyboard for WebView Example</string>
+    <string name="menu_keyboard_wizard_sample">Wizard Input Example</string>
+
+    <string name="menu_stacks_first_sample">First Stack Test</string>
+    <string name="menu_stacks_second_sample">Second Stack Test</string>
+    <string name="menu_stacks_third_sample">Third Normal Item</string>
+    <string name="menu_stacks_fourth_sample">Fourth Stack Test</string>
+    
+    <!-- Keyboard Sample Strings -->
+	<string name="input_extra_type">type</string>
+	<string name="input_extra_label">label</string>
+	<string name="input_extra_hint">hint</string>
+	<string name="input_extra_description">description</string>
+    <string name="input_extra_backLabel">backLabel</string>
+    <string name="input_extra_nextLabel">nextLabel</string>
+    <string name="input_extra_fieldNumber">fieldNumber</string>
+    <string name="input_extra_fieldCount">fieldCount</string>
+    
+    <string name="input_extra_type_wifi">wifi</string>
+	<string name="input_extra_type_card">card</string>
+    <string name="input_extra_type_email">email</string>
+    
+    <string name="kbsample_title">Input Form Sample</string>
+    <string name="kbsample_description">This form is just to illustrate how you can use normal EditText widgets to get the "wizard" feelings on ASB.</string>
+    
+    <string name="kbsample_button_label">Edit Values</string>
+    
+    <string name="kbsample_field_name_label">Name:</string>
+    <string name="kbsample_field_name_hint">User name</string>
+    <string name="kbsample_field_name_description">This is the name that will be shown on the entire Amazon site.</string>
+    <string name="kbsample_field_name_backLabel">Cancel</string>
+    
+    <string name="kbsample_field_email_label">Email:</string>
+    <string name="kbsample_field_email_hint">Amazon email</string>
+    <string name="kbsample_field_email_description">This email might be used as yout login as well.</string>
+    
+    <string name="kbsample_field_phone_label">Phone:</string>
+    <string name="kbsample_field_phone_hint"></string>
+    <string name="kbsample_field_phone_description"></string>
+    
+    <string name="kbsample_field_password_label">Password:</string>
+    <string name="kbsample_field_password_hint"></string>
+    <string name="kbsample_field_password_description"></string>
+    
+    <string name="kbsample_field_pin_label">PIN:</string>
+    <string name="kbsample_field_pin_hint"></string>
+    <string name="kbsample_field_pin_description"></string>
+    <string name="kbsample_field_pin_nextLabel">SAVE</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="carousel_view_item_tag" type="id" />
+    <item name="carousel_view_view_type" type="id" />
+    <item name="carousel_view_debug_color" type="id" />
+    <item name="carousel_cover_holder" type="id" />
+
+    <item name="carousel_nestedlist_item" type="id" />
+
+</resources>

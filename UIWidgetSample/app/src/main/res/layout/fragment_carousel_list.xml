@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/oned_layout"
+        layout="@layout/category_list_screen"
+        android:visibility="gone" />
+
+    <com.sample.amazon.asbuilibrary.list.CarouselList
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none" 
+        android:translationY="116.25dp" /> <!-- By specs when carousel is unselected it needs to
+                                                be 175px from top. Since we have 20px from inner
+                                                padding we use 155px (which is 116.25dp) here -->
+
+    <include layout="@layout/failed_loading_data" />
+
+</FrameLayout>

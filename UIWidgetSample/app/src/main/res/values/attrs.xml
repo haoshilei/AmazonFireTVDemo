@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CarouselView">
+        <attr name="tap_scroll_duration" format="float" />
+        <attr name="enable_long_scroll" format="boolean" />
+        <attr name="long_scroll_speed" format="float" />
+        <attr name="long_scroll_transition_duration" format="float" />
+        <attr name="long_scroll_threshold" format="float" />
+        <attr name="spacing" format="dimension" />
+        <attr name="minSpacing" format="dimension" />
+        <attr name="selected_item_scale" format="float" />
+        <attr name="unselected_item_scale" format="float" />
+        <attr name="selection_alignment" format="integer">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="flex" value="2" />
+        </attr>
+        <attr name="selection_offset" format="dimension" />
+        <attr name="list_start_padding" format="dimension" />
+        <attr name="list_end_padding" format="dimension" />
+        <attr name="long_scroll_selector_target_offset" format="float" />
+        <attr name="resizing_children" format="boolean" />
+        <attr name="jumping_allowed" format="boolean" />
+        <attr name="scale_duration" format="integer" />
+        <attr name="scale_animated" format="boolean" />
+        <attr name="constant_spacing" format="boolean" />
+        <attr name="scale_view_id" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ConditionalFocusListView">
+        <attr name="selected_position_from_top" format="dimension" />
+    </declare-styleable>
+
+    <attr name="font" format="string" />
+    <declare-styleable name="FontableTextView">
+        <attr name="font" />
+    </declare-styleable>
+    <declare-styleable name="FontableButton">
+        <attr name="font" />
+    </declare-styleable>
+
+    <declare-styleable name="RollupView">
+        <attr name="collapsed_spacing" format="dimension" />
+        <attr name="revealed_spacing" format="dimension" />
+        <attr name="expanded_spacing" format="dimension" />
+        <attr name="stack_size" format="integer" />
+        <attr name="visible_items" format="integer" />
+    </declare-styleable>
+    <attr name="rollupViewStyle" format="reference" />
+
+    <!-- These are the standard attributes that make up a complete theme. TODO kimbers: cleanup -->
+    <declare-styleable name="Theme">
+        <!-- ============== -->
+        <!-- Generic styles -->
+        <!-- ============== -->
+        <eat-comment />
+       <!-- Default style for PreferenceScreen. -->
+        <attr name="preferenceScreenStyle" format="reference" />
+        <!-- Default style for Headers pane in PreferenceActivity. -->
+        <attr name="preferenceFragmentStyle" format="reference" />
+        <!-- Default style for PreferenceCategory. -->
+        <attr name="preferenceCategoryStyle" format="reference" />
+        <!-- Default style for Preference. -->
+        <attr name="preferenceStyle" format="reference" />
+        <!-- Default style for informational Preference. -->
+        <attr name="preferenceInformationStyle" format="reference" />
+        <!-- Default style for CheckBoxPreference. -->
+        <attr name="checkBoxPreferenceStyle" format="reference" />
+        <!-- Default style for YesNoPreference. -->
+        <attr name="yesNoPreferenceStyle" format="reference" />
+        <!-- Default style for DialogPreference. -->
+        <attr name="dialogPreferenceStyle" format="reference" />
+        <!-- Default style for EditTextPreference. -->
+        <attr name="editTextPreferenceStyle" format="reference" />
+        <!-- Default style for RingtonePreference. -->
+        <attr name="ringtonePreferenceStyle" format="reference" />
+        <!-- The preference layout that has the child/tabbed effect. -->
+        <attr name="preferenceLayoutChild" format="reference" />
+        <!-- Preference panel style -->
+        <attr name="preferencePanelStyle" format="reference" />
+        <!-- Default style for switch preferences. -->
+        <attr name="switchPreferenceStyle" format="reference" />
+<!-- Preference frame layout styles. -->
+        <attr name="preferenceFrameLayoutStyle" format="reference" />
+    </declare-styleable>
+    
+    
+    
+    <!-- Gradient Text View items -->
+    <attr name="gradientType" format="integer">
+        <enum name="noGradient" value="1" />
+        <enum name="eachLine" value="2" />
+        <enum name="allText" value="3" />
+    </attr>
+    <attr name="bottomColor" format="reference|color" />
+    <attr name="xLineOffset" format="float" />
+
+    <declare-styleable name="GradientText">
+        <attr name="font" />
+        <attr name="gradientType" />
+        <attr name="bottomColor" />
+        <attr name="xLineOffset" />
+    </declare-styleable>
+
+</resources>
