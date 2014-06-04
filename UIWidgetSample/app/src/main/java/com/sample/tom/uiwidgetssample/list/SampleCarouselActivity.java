@@ -15,13 +15,17 @@ package com.sample.tom.uiwidgetssample.list;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.net.URL;
 import java.util.*;
@@ -76,14 +80,13 @@ public class SampleCarouselActivity extends Activity  {
             try {
                 BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(SampleCarouselActivity.this);
                 JSONArray jran = json.getJSONArray("Cakes");
-             //   JSONArray jrad = json.getJSONArray("description");
                 for( int i = 0; i < jran.length(); i++) {
                     try {
 
                         String jName = jran.getJSONObject(i).getString("name");
                         String jDescription = jran.getJSONObject(i).getString("description");
-                        Log.v(jName.toString(), "here");
-                        adapter.add(new Cake(jName, jDescription, "url"));
+                        String jUrl = jran.getJSONObject(i).getString("imageURL");
+                        adapter.add(new Cake(jName, jDescription, jUrl ));
 
 
                     } catch (JSONException e) {
@@ -93,6 +96,23 @@ public class SampleCarouselActivity extends Activity  {
                 @SuppressWarnings("unchecked")
                 CarouselView<BoxesCarouselAdapter> boxesCarousel = (CarouselView<BoxesCarouselAdapter>) findViewById(R.id.boxes_carousel);
                 boxesCarousel.setAdapter(adapter);
+                boxesCarousel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Log.v("clicked", "clicked");
+                    }
+                });
+                boxesCarousel.addItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Log.v("highlighted", "highlighted");
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
             } catch(JSONException e) { e.printStackTrace(); }
 
 
@@ -163,10 +183,34 @@ public class SampleCarouselActivity extends Activity  {
 			name.setText(getItem(position).getName());
             TextView description = (TextView) convertView.findViewById(R.id.description);
             description.setText(getItem(position).getDescription());
-           // TextView url = (TextView) convertView.findViewById(R.id.url);
-            //url.setText(getItem(position).getUrl());
-			return convertView;
+            ImageView imageView = (ImageView)convertView.findViewById(R.id.image);
+            new DownloadImageTask(imageView).execute(getItem(position).getUrl());
+            return convertView;
 		}
+        private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+            ImageView bmImage;
+
+            public DownloadImageTask(ImageView bmImage) {
+                this.bmImage = bmImage;
+            }
+
+            protected Bitmap doInBackground(String... urls) {
+                String urldisplay = urls[0];
+                Bitmap mIcon11 = null;
+                try {
+                    InputStream in = new java.net.URL(urldisplay).openStream();
+                    mIcon11 = BitmapFactory.decodeStream(in);
+                } catch (Exception e) {
+                    Log.e("Error", e.getMessage());
+                    e.printStackTrace();
+                }
+                return mIcon11;
+            }
+
+            protected void onPostExecute(Bitmap result) {
+                bmImage.setImageBitmap(result);
+            }
+        }
 	}
 
 }
