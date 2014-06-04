@@ -29,8 +29,8 @@
     <string name="app_name">Sample Application</string>
 
     <!-- Sample cathegories -->
-    <string name="category_carousel_samples">CAROUSEL SAMPLES</string>
-    <string name="category_detail_samples">DETAIL SAMPLE</string>
+    <string name="category_carousel_samples">CAKE SAMPLES</string>
+    <string name="category_detail_samples">Ferris Stuff</string>
     <string name="category_keyboard_samples">KEYBOARD SAMPLE</string>
     <string name="category_stacks_samples">STACKS SAMPLE</string>
 
@@ -41,10 +41,10 @@
     <string name="extra_content">Extra Fragment!</string>
 
     <!-- Main menu strings -->
-    <string name="menu_carousel_sample">Carousel Example</string>
-    <string name="menu_paging_sample">Paging Carousel Example</string>
+    <string name="menu_carousel_sample">Cakes Example</string>
+    <string name="menu_paging_sample">This does not do anything Example</string>
 
-    <string name="menu_details_sample">Details Page Example</string>
+    <string name="menu_details_sample">Bueller</string>
 
     <string name="menu_keyboard_input_sample">Keyboard for Input Fields Example</string>
     <string name="menu_keyboard_webview_sample">Keyboard for WebView Example</string>
@@ -81,7 +81,7 @@
     
     <string name="kbsample_field_email_label">Email:</string>
     <string name="kbsample_field_email_hint">Amazon email</string>
-    <string name="kbsample_field_email_description">This email might be used as yout login as well.</string>
+    <string name="kbsample_field_email_description">This email might be used as you login as well.</string>
     
     <string name="kbsample_field_phone_label">Phone:</string>
     <string name="kbsample_field_phone_hint"></string>

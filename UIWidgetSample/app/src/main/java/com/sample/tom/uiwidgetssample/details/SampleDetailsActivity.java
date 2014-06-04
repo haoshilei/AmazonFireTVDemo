@@ -16,12 +16,15 @@ package com.sample.tom.uiwidgetssample.details;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.sample.tom.uiwidgetssample.R;
 import com.sample.tom.asbuilibrary.details.DetailsBaseActivity;
 import com.sample.tom.asbuilibrary.details.DetailsTabInfo;
+import com.sample.tom.uiwidgetssample.list.Cake;
+import com.sample.tom.uiwidgetssample.list.DownloadImageTask;
 
 public class SampleDetailsActivity extends DetailsBaseActivity
 {
@@ -36,8 +39,16 @@ public class SampleDetailsActivity extends DetailsBaseActivity
         mMenuOptions.add(new DetailsTabInfo(getString(R.string.overview_tab), new DetailsOverviewFragment()));
         mMenuOptions.add(new DetailsTabInfo(getString(R.string.extra_tab), new DetailsExtraFragment()));
 
+        Cake cake = (Cake)getIntent().getSerializableExtra("cake");
+
         // Set our cover
-        setCoverImage(BitmapFactory.decodeResource(getResources(), R.drawable.cover1));
+
+        new DownloadImageTask(new DownloadImageTask.ImageLoadedCallback() {
+            @Override
+            public void onImageLoaded(Bitmap image) {
+                setCoverImage(image);
+            }
+        }).execute(cake.getUrl());
     }
 
     @Override

@@ -15,8 +15,8 @@ package com.sample.tom.uiwidgetssample.list;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,22 +28,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.net.URL;
-import java.util.*;
 import java.nio.charset.Charset;
-import java.lang.Object;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.os.AsyncTask;
 
 import com.sample.tom.uiwidgetssample.R;
 import com.sample.tom.asbuilibrary.list.CarouselView;
-
-import org.json.JSONException;
+import com.sample.tom.uiwidgetssample.details.SampleDetailsActivity;
 
 import java.io.*;
-import java.net.*;
+
 import org.json.*;
-import java.nio.charset.MalformedInputException;
 
 /**
  * Activity for showing a simple carousel
@@ -78,7 +74,7 @@ public class SampleCarouselActivity extends Activity  {
         }
         protected void onPostExecute(JSONObject json) {
             try {
-                BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(SampleCarouselActivity.this);
+                final BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(SampleCarouselActivity.this);
                 JSONArray jran = json.getJSONArray("Cakes");
                 for( int i = 0; i < jran.length(); i++) {
                     try {
@@ -99,7 +95,9 @@ public class SampleCarouselActivity extends Activity  {
                 boxesCarousel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Log.v("clicked", "clicked");
+                        Intent intent = new Intent(SampleCarouselActivity.this, SampleDetailsActivity.class);
+                        intent.putExtra("cake", adapter.getItem(position));
+                        startActivity(intent);
                     }
                 });
                 boxesCarousel.addItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -121,26 +119,6 @@ public class SampleCarouselActivity extends Activity  {
         }
     }
 
-    private class Cake {
-        private String name;
-        private String description;
-        private String url;
-
-        public Cake(String _name, String _description, String _url) {
-            this.name = _name;
-            this.description = _description;
-            this.url = _url;
-        }
-        public String getName() {
-            return this.name;
-        }
-        public String getDescription() {
-            return this.description;
-        }
-        public String getUrl() {
-            return this.url;
-        }
-    }
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -183,34 +161,15 @@ public class SampleCarouselActivity extends Activity  {
 			name.setText(getItem(position).getName());
             TextView description = (TextView) convertView.findViewById(R.id.description);
             description.setText(getItem(position).getDescription());
-            ImageView imageView = (ImageView)convertView.findViewById(R.id.image);
-            new DownloadImageTask(imageView).execute(getItem(position).getUrl());
+            final ImageView imageView = (ImageView)convertView.findViewById(R.id.image);
+            new DownloadImageTask(new DownloadImageTask.ImageLoadedCallback() {
+                @Override
+                public void onImageLoaded(Bitmap image) {
+                    imageView.setImageBitmap(image);
+                }
+            }).execute(getItem(position).getUrl());
             return convertView;
 		}
-        private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-            ImageView bmImage;
-
-            public DownloadImageTask(ImageView bmImage) {
-                this.bmImage = bmImage;
-            }
-
-            protected Bitmap doInBackground(String... urls) {
-                String urldisplay = urls[0];
-                Bitmap mIcon11 = null;
-                try {
-                    InputStream in = new java.net.URL(urldisplay).openStream();
-                    mIcon11 = BitmapFactory.decodeStream(in);
-                } catch (Exception e) {
-                    Log.e("Error", e.getMessage());
-                    e.printStackTrace();
-                }
-                return mIcon11;
-            }
-
-            protected void onPostExecute(Bitmap result) {
-                bmImage.setImageBitmap(result);
-            }
-        }
-	}
+    }
 
 }

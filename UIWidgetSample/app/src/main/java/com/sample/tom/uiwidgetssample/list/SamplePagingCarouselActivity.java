@@ -43,7 +43,7 @@ public class SamplePagingCarouselActivity extends Activity
 
         // Create our adapter
         List<Integer> list = new ArrayList<Integer>();
-        for (int i = 0; i < 200; i++)
+        for (int    i = 0; i < 200; i++)
         {
             list.add(i);
         }
