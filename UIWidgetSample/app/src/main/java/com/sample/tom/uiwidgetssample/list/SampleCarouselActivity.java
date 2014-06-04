@@ -15,13 +15,21 @@ package com.sample.tom.uiwidgetssample.list;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
+import java.net.URL;
+import java.util.*;
+import java.nio.charset.Charset;
+import java.lang.Object;
+import org.json.JSONException;
+import org.json.JSONObject;
+import android.os.AsyncTask;
 
 import com.sample.tom.uiwidgetssample.R;
 import com.sample.tom.asbuilibrary.list.CarouselView;
@@ -36,64 +44,62 @@ import java.nio.charset.MalformedInputException;
 /**
  * Activity for showing a simple carousel
  */
-public class SampleCarouselActivity extends Activity {
+public class SampleCarouselActivity extends Activity  {
 
-	@Override
+ 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-        BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(this);
+
 		setContentView(R.layout.carousel_activity);
 
-		// Create our adapter
-        try {
+            new DownloadFilesTask().execute();
 
-            URL cakeList = new URL("http://localhost:9292/cakeList.json");
+        }
+
+    private class DownloadFilesTask extends AsyncTask<Void, Integer, JSONObject> {
+        protected JSONObject doInBackground(Void... avoid) {
+            JSONObject json = null;
             try {
-                StringBuffer json = new StringBuffer();
-                BufferedReader in = new BufferedReader(new InputStreamReader(cakeList.openStream()));
-                String inputLine;
-                while ((inputLine = in.readLine()) != null)
-                    System.out.println(inputLine);
-                in.close();
+                json = readJsonFromUrl("http://10.0.1.8:9292/pastries.json");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+            return json;
+        }
+        protected void onProgressUpdate(Integer... progress) {
 
-                for (int i = 0; i < 50; i++) {
-                    adapter.add(new Cake("name", "description", "url"));
-                }
-                JSONObject jObject = new JSONObject(json.toString());
-                JSONArray jArray = jObject.getJSONArray("Cakes");
-
-                for (int i=0; i < jArray.length(); i++)
-                {
+        }
+        protected void onPostExecute(JSONObject json) {
+            try {
+                BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(SampleCarouselActivity.this);
+                JSONArray jran = json.getJSONArray("Cakes");
+             //   JSONArray jrad = json.getJSONArray("description");
+                for( int i = 0; i < jran.length(); i++) {
                     try {
-                        JSONObject oneObject = jArray.getJSONObject(i);
-                        // Pulling items from the array
-                        String oneObjectsItem = oneObject.getString("STRINGNAMEinTHEarray");
-                        String oneObjectsItem2 = oneObject.getString("anotherSTRINGNAMEINtheARRAY");
-                        adapter.add(new Cake(oneObjectsItem, oneObjectsItem2, "url"));
+
+                        String jName = jran.getJSONObject(i).getString("name");
+                        String jDescription = jran.getJSONObject(i).getString("description");
+                        Log.v(jName.toString(), "here");
+                        adapter.add(new Cake(jName, jDescription, "url"));
+
 
                     } catch (JSONException e) {
-                        // Oops
+                        e.printStackTrace();
                     }
                 }
-            } catch(IOException x) { x.printStackTrace(); } catch (JSONException e) {
-                e.printStackTrace();
-            }
+                @SuppressWarnings("unchecked")
+                CarouselView<BoxesCarouselAdapter> boxesCarousel = (CarouselView<BoxesCarouselAdapter>) findViewById(R.id.boxes_carousel);
+                boxesCarousel.setAdapter(adapter);
+            } catch(JSONException e) { e.printStackTrace(); }
 
 
-            //JSONObject json = jParser.getJSONFromUrl(url);
-        } catch (MalformedURLException e) { e.printStackTrace(); }
+            // Set our adapter on our carousel
 
-//		BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(this);
-//		for (int i = 0; i < 50; i++) {
-//			adapter.add(new Cake("name", "description", "url"));
-//		}
-
-		// Set our adapter on our carousel
-		@SuppressWarnings("unchecked")
-		CarouselView<BoxesCarouselAdapter> boxesCarousel = (CarouselView<BoxesCarouselAdapter>) findViewById(R.id.boxes_carousel);
-		boxesCarousel.setAdapter(adapter);
-	}
+        }
+    }
 
     private class Cake {
         private String name;
@@ -115,6 +121,26 @@ public class SampleCarouselActivity extends Activity {
             return this.url;
         }
     }
+    private static String readAll(Reader rd) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int cp;
+        while ((cp = rd.read()) != -1) {
+            sb.append((char) cp);
+        }
+        return sb.toString();
+    }
+
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+        InputStream is = new URL(url).openStream();
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            JSONObject json = new JSONObject(jsonText);
+            return json;
+        } finally {
+            is.close();
+        }
+    }
 
 	/**
 	 * Adapter for our Carousel to show simple boxes with text
@@ -133,9 +159,9 @@ public class SampleCarouselActivity extends Activity {
 			}
 
 			// Set the text
-			TextView name = (TextView) convertView.findViewById(R.id.text);
+			TextView name = (TextView) convertView.findViewById(R.id.name);
 			name.setText(getItem(position).getName());
-            TextView description = (TextView) convertView.findViewById(R.id.text);
+            TextView description = (TextView) convertView.findViewById(R.id.description);
             description.setText(getItem(position).getDescription());
            // TextView url = (TextView) convertView.findViewById(R.id.url);
             //url.setText(getItem(position).getUrl());
