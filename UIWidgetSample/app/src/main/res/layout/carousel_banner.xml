@@ -9,7 +9,7 @@
     android:padding="10dp"
     android:visibility="gone" >
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/banner_title"
         android:ellipsize="end"
         android:includeFontPadding="false"
@@ -19,7 +19,7 @@
         app:font="RobotoBold"
         style="@style/coverBanner.Title" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/banner_text"
         android:ellipsize="end"
         android:includeFontPadding="false"

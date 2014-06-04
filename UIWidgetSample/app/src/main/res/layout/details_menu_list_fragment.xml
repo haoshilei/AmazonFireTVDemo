@@ -12,7 +12,7 @@
         android:contentDescription="@string/cover_content_description"
         android:scaleType="fitCenter" />
 
-    <com.sample.amazon.asbuilibrary.details.DetailsMenuOptionListView
+    <com.sample.tom.asbuilibrary.details.DetailsMenuOptionListView
             android:id="@id/android:list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- 55.5dp tall and centered at 75.75dp below top means a top margin of 48.0dp -->
-<com.sample.amazon.asbuilibrary.util.BreadCrumbRibbon
+<com.sample.tom.asbuilibrary.util.BreadCrumbRibbon
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -37,7 +37,7 @@
 
         <!-- The background has a 7px drop shadow, and we are supposed to be 2px away
          Right margin is set to show the right border 28px away, accommodating the drop shadow -->
-        <com.sample.amazon.asbuilibrary.view.FontableTextView
+        <com.sample.tom.asbuilibrary.view.FontableTextView
             android:id="@+id/ribbon_category_name_view"
             app:font="RobotoBold"
             android:textAllCaps="true"
@@ -59,7 +59,7 @@
             android:background="@drawable/meatcrumb_ribbon_segment_01"
             android:layout_marginLeft="@dimen/breadcrumb_number_portion_left_margin">
 
-            <com.sample.amazon.asbuilibrary.view.FontableTextView
+            <com.sample.tom.asbuilibrary.view.FontableTextView
                 android:id="@+id/ribbon_item_number_view_numerator"
                 app:font="RobotoBlack"
                 android:textSize="@dimen/breadcrumb_number_portion_text_size"
@@ -67,7 +67,7 @@
                 android:layout_width="@dimen/breadcrumb_number_portion_left_textview_width"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical|right" />
-            <com.sample.amazon.asbuilibrary.view.FontableTextView
+            <com.sample.tom.asbuilibrary.view.FontableTextView
                 android:id="@+id/ribbon_item_number_view_seperator"
                 app:font="RobotoLight"
                 android:textSize="@dimen/breadcrumb_number_portion_text_size"
@@ -76,7 +76,7 @@
                 android:gravity="center"
                 android:text="@string/pipe"
                 android:layout_width="@dimen/breadcrumb_number_portion_center_textview_width" />
-            <com.sample.amazon.asbuilibrary.view.FontableTextView
+            <com.sample.tom.asbuilibrary.view.FontableTextView
                 android:id="@+id/ribbon_item_number_view_denominator"
                 app:font="RobotoLight"
                 android:textSize="@dimen/breadcrumb_number_portion_text_size"
@@ -90,4 +90,4 @@
 
     <!-- TODO: fix this to match spec -->
 
-</com.sample.amazon.asbuilibrary.util.BreadCrumbRibbon>
+</com.sample.tom.asbuilibrary.util.BreadCrumbRibbon>

@@ -8,7 +8,7 @@
         layout="@layout/category_list_screen"
         android:visibility="gone" />
 
-    <com.sample.amazon.asbuilibrary.list.CarouselList
+    <com.sample.tom.asbuilibrary.list.CarouselList
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

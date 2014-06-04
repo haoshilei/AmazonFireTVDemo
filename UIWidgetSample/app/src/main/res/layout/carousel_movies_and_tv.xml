@@ -25,7 +25,7 @@
         android:background="@drawable/tombstone_bg"
         android:visibility="gone" >
 
-        <com.sample.amazon.asbuilibrary.view.FontableTextView
+        <com.sample.tom.asbuilibrary.view.FontableTextView
             android:id="@+id/tombstone_text"
             style="@style/tombstoneText"
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
 
     </RelativeLayout>
 
-    <com.sample.amazon.asbuilibrary.list.ItemCarouselView
+    <com.sample.tom.asbuilibrary.list.ItemCarouselView
         android:id="@+id/cover_list"
         style="@style/Widget.ItemCarouselView"
         android:layout_width="match_parent"

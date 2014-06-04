@@ -9,14 +9,14 @@
     android:orientation="vertical"
     android:visibility="gone">
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="19.5sp"
         android:text="@string/failed_loading" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableButton
+    <com.sample.tom.asbuilibrary.view.FontableButton
         app:font="RobotoBlack"
         android:id="@+id/retry_button"
         android:layout_width="wrap_content"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.sample.amazon.asbuilibrary.list.CarouselView
+    <com.sample.tom.asbuilibrary.list.CarouselView
             android:id="@+id/boxes_carousel"
             android:layout_centerInParent="true"
             style="@style/Widget.CarouselView"/>

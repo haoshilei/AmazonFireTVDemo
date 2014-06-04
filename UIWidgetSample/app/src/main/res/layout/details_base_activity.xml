@@ -7,7 +7,7 @@
 
     <!-- The left options fragment -->
     <fragment 
-        android:name="com.sample.amazon.asbuilibrary.details.DetailsMenuListFragment"
+        android:name="com.sample.tom.asbuilibrary.details.DetailsMenuListFragment"
         android:id="@+id/list_fragment"
         android:layout_width="@dimen/detail_menu_options_width"
         android:layout_height="match_parent"

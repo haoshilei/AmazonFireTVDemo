@@ -19,7 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="142.5dp">
 
-            <com.sample.amazon.asbuilibrary.list.ItemCarouselView
+            <com.sample.tom.asbuilibrary.list.ItemCarouselView
                 android:id="@+id/cover_list"
                 style="@style/Widget.ItemCarouselView"
                 android:layout_width="match_parent"

@@ -7,7 +7,7 @@
     android:layout_marginTop="@dimen/carousel_top_margin"
     android:visibility="gone">
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/title"
         app:font="RobotoBlack"
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
         android:paddingRight="3.75dp"
         android:contentDescription="@string/video_rating_description" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/year"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
         android:textColor="@color/expanded_details_title"
         android:textSize="9.0sp" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/duration"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/metacritic" />
 
-        <com.sample.amazon.asbuilibrary.view.FontableTextView
+        <com.sample.tom.asbuilibrary.view.FontableTextView
             android:id="@+id/metacritic_rating"
             app:font="RobotoBlack"
             android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
         android:numStars="5"
         android:stepSize="0.5" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/num_reviews"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
 
     <!-- The Cast -->
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/starring"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
         android:textSize="7.5sp"
         android:textStyle="bold" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/cast"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
 
     <!-- The Director -->
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/director_title"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
         android:textSize="7.5sp"
         android:textStyle="bold" />
 
-    <com.sample.amazon.asbuilibrary.view.FontableTextView
+    <com.sample.tom.asbuilibrary.view.FontableTextView
         android:id="@+id/director"
         app:font="RobotoBlack"
         android:layout_width="wrap_content"
@@ -187,7 +187,7 @@
         android:layout_below="@id/director_title"
         android:orientation="vertical">
 
-        <com.sample.amazon.asbuilibrary.view.FontableButton
+        <com.sample.tom.asbuilibrary.view.FontableButton
             android:id="@+id/add_to_watch_btn"
             app:font="RobotoBlack"
             android:layout_width="112.5dp"
@@ -200,7 +200,7 @@
             android:clickable="true"
             android:enabled="true" />
 
-        <com.sample.amazon.asbuilibrary.view.FontableButton
+        <com.sample.tom.asbuilibrary.view.FontableButton
             android:id="@+id/more_info_btn"
             app:font="RobotoBlack"
             android:layout_width="112.5dp"

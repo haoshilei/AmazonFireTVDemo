@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sample.amazon.asbuilibrary.list.MovieAndTvView
+<com.sample.tom.asbuilibrary.list.MovieAndTvView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content" android:gravity="right"
@@ -17,7 +17,7 @@
              little better than cropping. When we move the banner to not be within
              the carousel's child view we won't need to apply a left margin to the
              ImageView anymore, and we can switch back to using fitCenter. -->
-        <com.sample.amazon.asbuilibrary.view.CoverImageView
+        <com.sample.tom.asbuilibrary.view.CoverImageView
             android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -53,4 +53,4 @@
         android:layout_centerInParent="true"
         android:indeterminateOnly="true" />
 
-</com.sample.amazon.asbuilibrary.list.MovieAndTvView>
+</com.sample.tom.asbuilibrary.list.MovieAndTvView>

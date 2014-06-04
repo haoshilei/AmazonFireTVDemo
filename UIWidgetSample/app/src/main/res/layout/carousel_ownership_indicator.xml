@@ -15,7 +15,7 @@
         android:visibility="gone"
         android:gravity="right">
 
-        <com.sample.amazon.asbuilibrary.view.FontableTextView
+        <com.sample.tom.asbuilibrary.view.FontableTextView
             android:id="@+id/banner_ownership_text"
             android:includeFontPadding="false"
             android:layout_width="wrap_content"

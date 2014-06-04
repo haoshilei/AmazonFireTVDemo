@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <fragment android:name="com.sample.amazon.uiwidgetssample.MainFragment"
+        <fragment android:name="com.sample.tom.uiwidgetssample.MainFragment"
             android:id="@+id/carousel_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
