@@ -49,7 +49,7 @@ public class SampleCarouselActivity extends Activity  {
 
     static TextView description;
     static TextView name;
-    static ImageView pic;
+    ImageView pic;
     static JSONArray jran = new JSONArray();
 
 
@@ -60,10 +60,9 @@ public class SampleCarouselActivity extends Activity  {
 
 		setContentView(R.layout.carousel_activity);
         description = (TextView) findViewById(R.id.description2);
+        pic = (ImageView) findViewById(R.id.pic);
         name = (TextView) findViewById(R.id.name2);
-
             new DownloadFilesTask().execute();
-
         }
 
     private class DownloadFilesTask extends AsyncTask<Void, Integer, JSONObject> {
@@ -118,7 +117,17 @@ public class SampleCarouselActivity extends Activity  {
                             SampleCarouselActivity.this.description.setText(jran.getJSONObject(position).getString("description"));
                             SampleCarouselActivity.this.name.setText(jran.getJSONObject(position).getString("name"));
 
-                            //SampleCarouselActivity.this.pic.setImageBitmap();
+//                            SampleCarouselActivity.this.pic.setImageBitmap();
+                            new DownloadImageTask(new DownloadImageTask.ImageLoadedCallback() {
+                                @Override
+                                public void onImageLoaded(Bitmap image) {
+                                    Log.v("img", image.toString());
+                                    Log.v("pic", pic.toString());
+                                    SampleCarouselActivity.this.pic.setImageBitmap(image);
+
+                                }
+
+                            }).execute(jran.getJSONObject(position).getString("imageURL"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
