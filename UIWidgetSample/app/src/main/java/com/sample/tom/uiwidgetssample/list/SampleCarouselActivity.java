@@ -44,7 +44,14 @@ import org.json.*;
 /**
  * Activity for showing a simple carousel
  */
+
 public class SampleCarouselActivity extends Activity  {
+
+    static TextView description;
+    static TextView name;
+    static ImageView pic;
+    static JSONArray jran = new JSONArray();
+
 
  	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,8 @@ public class SampleCarouselActivity extends Activity  {
 
 
 		setContentView(R.layout.carousel_activity);
+        description = (TextView) findViewById(R.id.description2);
+        name = (TextView) findViewById(R.id.name2);
 
             new DownloadFilesTask().execute();
 
@@ -75,7 +84,8 @@ public class SampleCarouselActivity extends Activity  {
         protected void onPostExecute(JSONObject json) {
             try {
                 final BoxesCarouselAdapter adapter = new BoxesCarouselAdapter(SampleCarouselActivity.this);
-                JSONArray jran = json.getJSONArray("Cakes");
+
+                jran = json.getJSONArray("Cakes");
                 for( int i = 0; i < jran.length(); i++) {
                     try {
 
@@ -103,7 +113,15 @@ public class SampleCarouselActivity extends Activity  {
                 boxesCarousel.addItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        Log.v("highlighted", "highlighted");
+                        try {
+                            Log.v("DEBUG", SampleCarouselActivity.jran.getJSONObject(position).getString("description"));
+                            SampleCarouselActivity.this.description.setText(jran.getJSONObject(position).getString("description"));
+                            SampleCarouselActivity.this.name.setText(jran.getJSONObject(position).getString("name"));
+
+                            //SampleCarouselActivity.this.pic.setImageBitmap();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
                     @Override
@@ -162,11 +180,14 @@ public class SampleCarouselActivity extends Activity  {
             TextView description = (TextView) convertView.findViewById(R.id.description);
             description.setText(getItem(position).getDescription());
             final ImageView imageView = (ImageView)convertView.findViewById(R.id.image);
+
             new DownloadImageTask(new DownloadImageTask.ImageLoadedCallback() {
                 @Override
                 public void onImageLoaded(Bitmap image) {
                     imageView.setImageBitmap(image);
+
                 }
+
             }).execute(getItem(position).getUrl());
             return convertView;
 		}
